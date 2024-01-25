@@ -47,6 +47,13 @@ function updateAnimation() {
     // TODO: passe hier die Variablen anm die die Animation steuern.
     // Zum Beispiel:
     // Erhöhen Sie `type` um 1. Wenn `type` grösser als 3 ist, setzen Sie es auf 0.
+
+    if (frameCounter > 15) {
+        frameCounter = 0
+        pos = pos + 1
+        if (pos > 2) pos = 0
+    }
+
 }
 
 // Start ins Programm. Startet die Animations-Schleife
@@ -62,8 +69,32 @@ function main() {
 window.onkeydown = function({code}) {
 
     if (code === "ArrowRight") {
+       x = x + 1
+       type = 2
         // Was soll passieren wenn die rechte Pfeiltaste gedrückt wird?
     }
+
+
+    if (code === "ArrowLeft") {
+        x = x - 1
+        type= 1
+        // Was soll passieren wenn die linke Pfeiltaste gedrückt wird?
+    }
+ 
+   
+    if (code === "ArrowDown") {
+        y = y + 1
+        type= 0
+        // Was soll passieren wenn die unten Pfeiltaste gedrückt wird?
+    }
+ 
+ 
+    if (code === "ArrowUp") {
+        y = y - 1
+        type= 3
+        // Was soll passieren wenn die oben Pfeiltaste gedrückt wird?
+    }
 }
+ 
 
 main()
